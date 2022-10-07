@@ -9,3 +9,5 @@
 
 - fillRule instead of fill-rule in svg cart.tsx
 - decrease or increase need to check difference id that will not change
+- npm json-decode
+- npm i --save-dev @types/styled-components

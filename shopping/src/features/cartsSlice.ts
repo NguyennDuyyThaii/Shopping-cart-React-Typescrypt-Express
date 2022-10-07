@@ -39,6 +39,7 @@ const cartSlice = createSlice({
 
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+    
     removeFromCart(state, action) {
       const nextCartItems = state.cartItems.filter(
         (item: any) => item.id !== action.payload.id
@@ -50,6 +51,7 @@ const cartSlice = createSlice({
         position: "bottom-left",
       });
     },
+
     decreaseCartQuantity(state, action) {
       const itemIndex = state.cartItems.findIndex(
         (item: any) => item.id === action.payload.id
@@ -71,6 +73,7 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+
     increaseCartQuantity(state, action) {
       const itemIndex = state.cartItems.findIndex(
         (item: any) => item.id === action.payload.id
@@ -88,11 +91,13 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+
     cleanCart(state, action) {
       state.cartItems = [];
       toast.error("Cart cleaned", { position: "bottom-left" });
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+
     calculateSubtotal(state, action) {
       if (state.cartItems.length > 0) {
         state.cartTotalQuantity = state.cartItems
